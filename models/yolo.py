@@ -47,7 +47,7 @@ from models.common import (
     Focus,
     GhostBottleneck,
     GhostConv,
-    Proto, SE,
+    Proto, SE, CBAM, ECA,
 )
 from models.experimental import MixConv2d
 from utils.autoanchor import check_anchor_order
@@ -411,6 +411,9 @@ def parse_model(d, ch):
             nn.ConvTranspose2d,
             DWConvTranspose2d,
             C3x,
+            CBAM,
+            ECA,
+
         }:
             c1, c2 = ch[f], args[0]
             if c2 != no:  # if not output
