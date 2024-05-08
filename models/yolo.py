@@ -47,7 +47,7 @@ from models.common import (
     Focus,
     GhostBottleneck,
     GhostConv,
-    Proto, SE, CBAM, ECA,
+    Proto, SE, CBAM, ECA, CoordConv,
 )
 from models.experimental import MixConv2d
 from utils.autoanchor import check_anchor_order
@@ -413,6 +413,7 @@ def parse_model(d, ch):
             C3x,
             CBAM,
             ECA,
+            CoordConv,
 
         }:
             c1, c2 = ch[f], args[0]
